@@ -64,7 +64,7 @@ loader = quik.FileLoader(getcwd() + '/', True)
 filelist = ['template_serverlist.html']
 for tempfile in filelist:
     outname = tempfile.replace("template", "processed")
-    template = loader.load_template("awsdash/templates/" + tempfile)
+    template = loader.load_template("templates/" + tempfile)
     f1 = open(outname, 'w+')
     f1.write(template.render(locals(), loader))
     f1.close()
