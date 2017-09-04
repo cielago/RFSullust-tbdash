@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SOASTA - Build Infrastructure Dashboard</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Timeline CSS -->
+    <link href="../dist/css/timeline.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="../bower_components/morrisjs/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">SOASTA - Build Infrastructure Dashboard</a>
+            </div>
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="#Summary"><i class="fa fa-th-list fa-fw"></i> Summary</a>
+                        </li>
+                        <li>
+                            <a href="#BuildSystems"><i class="fa fa-laptop fa-fw"></i> Build Systems</a>
+                        </li>
+                        <li>
+                            <a href="#Services"><i class="fa fa-cloud fa-fw"></i> Services</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header"><a name="Summary"></a> Summary</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <div class="col-lg-12">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Server</th>
+                                <th>Status</th>
+                                <th>Time Down</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <tr class=info>
+                                <td><a href="#Measure">Measure</a></td>
+                                <td>Currently Disabled</td>
+                                <td>n/a</td>
+                            </tr>
+                            
+                            <tr class=info>
+                                <td><a href="#Rum-Demo">Rum-Demo</a></td>
+                                <td>Currently Disabled</td>
+                                <td>n/a</td>
+                            </tr>
+                            
+                            <tr class=info>
+                                <td><a href="#Rum-Dev-2">Rum-Dev-2</a></td>
+                                <td>Currently Disabled</td>
+                                <td>n/a</td>
+                            </tr>
+                            
+                            <tr class=info>
+                                <td><a href="#Tempo">Tempo</a></td>
+                                <td>Currently Disabled</td>
+                                <td>n/a</td>
+                            </tr>
+                            
+                            <tr class=info>
+                                <td><a href="#aws_hydrogen">aws_hydrogen</a></td>
+                                <td>Currently Disabled</td>
+                                <td>n/a</td>
+                            </tr>
+                            
+                            <tr class=info>
+                                <td><a href="#aws_kalamata">aws_kalamata</a></td>
+                                <td>Currently Disabled</td>
+                                <td>n/a</td>
+                            </tr>
+                            
+                            <tr class=warning>
+                                <td><a href="#cadence">cadence</a></td>
+                                <td>Some Services Down</td>
+                                <td>n/a</td>
+                            </tr>
+                            
+                            <tr class=warning>
+                                <td><a href="#comfort">comfort</a></td>
+                                <td>Some Services Down</td>
+                                <td>n/a</td>
+                            </tr>
+                            
+                            <tr class=warning>
+                                <td><a href="#confidence">confidence</a></td>
+                                <td>Some Services Down</td>
+                                <td>n/a</td>
+                            </tr>
+                            
+                            <tr class=warning>
+                                <td><a href="#freedom">freedom</a></td>
+                                <td>Some Services Down</td>
+                                <td>n/a</td>
+                            </tr>
+                            
+                            <tr class=warning>
+                                <td><a href="#helium">helium</a></td>
+                                <td>Some Services Down</td>
+                                <td>n/a</td>
+                            </tr>
+                            
+                            <tr class=warning>
+                                <td><a href="#hydrogen">hydrogen</a></td>
+                                <td>Some Services Down</td>
+                                <td>n/a</td>
+                            </tr>
+                            
+                            <tr class=warning>
+                                <td><a href="#kalamata">kalamata</a></td>
+                                <td>Some Services Down</td>
+                                <td>n/a</td>
+                            </tr>
+                            
+                            <tr class=warning>
+                                <td><a href="#liberty">liberty</a></td>
+                                <td>Some Services Down</td>
+                                <td>n/a</td>
+                            </tr>
+                            
+                            <tr class=warning>
+                                <td><a href="#rhythm">rhythm</a></td>
+                                <td>Some Services Down</td>
+                                <td>n/a</td>
+                            </tr>
+                            
+                            <tr class=warning>
+                                <td><a href="#tapenade">tapenade</a></td>
+                                <td>Some Services Down</td>
+                                <td>n/a</td>
+                            </tr>
+                            
+                            <tr class=warning>
+                                <td><a href="#truth">truth</a></td>
+                                <td>Some Services Down</td>
+                                <td>n/a</td>
+                            </tr>
+                            
+                            <tr class=warning>
+                                <td><a href="#wisdom">wisdom</a></td>
+                                <td>Some Services Down</td>
+                                <td>n/a</td>
+                            </tr>
+                                                    </tbody>
+                    </table>
+                </div>
+                    <!-- /.panel -->
+            </div>
+            <!-- /.row -->
+            
+            <div class="col-lg-12">
+                <h1 class="page-header"><a name="BuildSystems"></a>Build Systems</h1>
+            </div>
+            <!-- /.row -->
+            
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <a name="Measure"></a>Measure
+                        </div>
+                        <!-- .panel-heading -->
+                        <div class="panel-body">
+                            <div class="panel-group" id="Measure">
+                            IP: 74.116.114.67 <br>
+                            HW:  <br>
+                            <br>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#Measure" href="#collapseMeasure">Status Details</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseMeasure" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                                                                    </div>
+                                    <small><p style="text-indent: 1em;">last updated: @server.last_checked</p></small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- .panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <a name="Rum-Demo"></a>Rum-Demo
+                        </div>
+                        <!-- .panel-heading -->
+                        <div class="panel-body">
+                            <div class="panel-group" id="Rum-Demo">
+                            IP: 52.10.111.19 <br>
+                            HW:  <br>
+                            <br>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#Rum-Demo" href="#collapseRum-Demo">Status Details</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseRum-Demo" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                                                                    </div>
+                                    <small><p style="text-indent: 1em;">last updated: @server.last_checked</p></small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- .panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <a name="Rum-Dev-2"></a>Rum-Dev-2
+                        </div>
+                        <!-- .panel-heading -->
+                        <div class="panel-body">
+                            <div class="panel-group" id="Rum-Dev-2">
+                            IP: 54.218.4.211 <br>
+                            HW:  <br>
+                            <br>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#Rum-Dev-2" href="#collapseRum-Dev-2">Status Details</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseRum-Dev-2" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                                                                    </div>
+                                    <small><p style="text-indent: 1em;">last updated: @server.last_checked</p></small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- .panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <a name="Tempo"></a>Tempo
+                        </div>
+                        <!-- .panel-heading -->
+                        <div class="panel-body">
+                            <div class="panel-group" id="Tempo">
+                            IP: 74.116.114.65 <br>
+                            HW:  <br>
+                            <br>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#Tempo" href="#collapseTempo">Status Details</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseTempo" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                                                                    </div>
+                                    <small><p style="text-indent: 1em;">last updated: @server.last_checked</p></small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- .panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <a name="aws_hydrogen"></a>aws_hydrogen
+                        </div>
+                        <!-- .panel-heading -->
+                        <div class="panel-body">
+                            <div class="panel-group" id="aws_hydrogen">
+                            IP: 52.11.77.4 <br>
+                            HW:  <br>
+                            <br>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#aws_hydrogen" href="#collapseaws_hydrogen">Status Details</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseaws_hydrogen" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                                                                    </div>
+                                    <small><p style="text-indent: 1em;">last updated: @server.last_checked</p></small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- .panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <a name="aws_kalamata"></a>aws_kalamata
+                        </div>
+                        <!-- .panel-heading -->
+                        <div class="panel-body">
+                            <div class="panel-group" id="aws_kalamata">
+                            IP: 52.10.68.159 <br>
+                            HW:  <br>
+                            <br>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#aws_kalamata" href="#collapseaws_kalamata">Status Details</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseaws_kalamata" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                                                                    </div>
+                                    <small><p style="text-indent: 1em;">last updated: @server.last_checked</p></small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- .panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-warning">
+                        <div class="panel-heading">
+                            <a name="cadence"></a>cadence
+                        </div>
+                        <!-- .panel-heading -->
+                        <div class="panel-body">
+                            <div class="panel-group" id="cadence">
+                            IP: 74.116.114.66 <br>
+                            HW:  <br>
+                            <br>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#cadence" href="#collapsecadence">Status Details</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapsecadence" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            
+                                            <div class="alert alert-danger">
+                                                Instance: Down
+                                            </div>
+                                            
+                                            <div class="alert alert-success">
+                                                apache: Up
+                                            </div>
+                                            
+                                            <div class="alert alert-warning">
+                                                jboss: Unknown
+                                            </div>
+                                            
+                                            <div class="alert alert-success">
+                                                concerto: Up
+                                            </div>
+                                                                                    </div>
+                                    <small><p style="text-indent: 1em;">last updated: 2015-04-15 15:32:13</p></small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- .panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-warning">
+                        <div class="panel-heading">
+                            <a name="comfort"></a>comfort
+                        </div>
+                        <!-- .panel-heading -->
+                        <div class="panel-body">
+                            <div class="panel-group" id="comfort">
+                            IP: 74.116.114.5 <br>
+                            HW:  <br>
+                            <br>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#comfort" href="#collapsecomfort">Status Details</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapsecomfort" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            
+                                            <div class="alert alert-success">
+                                                Instance: Up
+                                            </div>
+                                            
+                                            <div class="alert alert-success">
+                                                apache: Up
+                                            </div>
+                                            
+                                            <div class="alert alert-warning">
+                                                jboss: Unknown
+                                            </div>
+                                            
+                                            <div class="alert alert-success">
+                                                concerto: Up
+                                            </div>
+                                                                                    </div>
+                                    <small><p style="text-indent: 1em;">last updated: 2015-04-15 15:31:26</p></small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- .panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-warning">
+                        <div class="panel-heading">
+                            <a name="confidence"></a>confidence
+                        </div>
+                        <!-- .panel-heading -->
+                        <div class="panel-body">
+                            <div class="panel-group" id="confidence">
+                            IP: 74.116.114.1 <br>
+                            HW:  <br>
+                            <br>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#confidence" href="#collapseconfidence">Status Details</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseconfidence" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            
+                                            <div class="alert alert-success">
+                                                Instance: Up
+                                            </div>
+                                            
+                                            <div class="alert alert-success">
+                                                apache: Up
+                                            </div>
+                                            
+                                            <div class="alert alert-warning">
+                                                jboss: Unknown
+                                            </div>
+                                            
+                                            <div class="alert alert-success">
+                                                concerto: Up
+                                            </div>
+                                                                                    </div>
+                                    <small><p style="text-indent: 1em;">last updated: 2015-04-15 15:30:41</p></small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- .panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-warning">
+                        <div class="panel-heading">
+                            <a name="freedom"></a>freedom
+                        </div>
+                        <!-- .panel-heading -->
+                        <div class="panel-body">
+                            <div class="panel-group" id="freedom">
+                            IP: 74.116.114.12 <br>
+                            HW: stuff <br>
+                            <br>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#freedom" href="#collapsefreedom">Status Details</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapsefreedom" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            
+                                            <div class="alert alert-success">
+                                                Instance: Up
+                                            </div>
+                                            
+                                            <div class="alert alert-danger">
+                                                apache: Down
+                                            </div>
+                                            
+                                            <div class="alert alert-success">
+                                                jenkins: Up
+                                            </div>
+                                                                                    </div>
+                                    <small><p style="text-indent: 1em;">last updated: 2015-04-15 15:31:25</p></small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- .panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-warning">
+                        <div class="panel-heading">
+                            <a name="helium"></a>helium
+                        </div>
+                        <!-- .panel-heading -->
+                        <div class="panel-body">
+                            <div class="panel-group" id="helium">
+                            IP: 74.116.114.7 <br>
+                            HW:  <br>
+                            <br>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#helium" href="#collapsehelium">Status Details</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapsehelium" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            
+                                            <div class="alert alert-success">
+                                                Instance: Up
+                                            </div>
+                                            
+                                            <div class="alert alert-success">
+                                                apache: Up
+                                            </div>
+                                            
+                                            <div class="alert alert-warning">
+                                                jboss: Unknown
+                                            </div>
+                                            
+                                            <div class="alert alert-success">
+                                                concerto: Up
+                                            </div>
+                                                                                    </div>
+                                    <small><p style="text-indent: 1em;">last updated: 2015-04-15 15:31:32</p></small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- .panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-warning">
+                        <div class="panel-heading">
+                            <a name="hydrogen"></a>hydrogen
+                        </div>
+                        <!-- .panel-heading -->
+                        <div class="panel-body">
+                            <div class="panel-group" id="hydrogen">
+                            IP: 74.116.114.8 <br>
+                            HW:  <br>
+                            <br>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#hydrogen" href="#collapsehydrogen">Status Details</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapsehydrogen" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            
+                                            <div class="alert alert-success">
+                                                Instance: Up
+                                            </div>
+                                            
+                                            <div class="alert alert-success">
+                                                apache: Up
+                                            </div>
+                                            
+                                            <div class="alert alert-warning">
+                                                jboss: Unknown
+                                            </div>
+                                            
+                                            <div class="alert alert-success">
+                                                concerto: Up
+                                            </div>
+                                                                                    </div>
+                                    <small><p style="text-indent: 1em;">last updated: 2015-04-15 15:31:31</p></small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- .panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-warning">
+                        <div class="panel-heading">
+                            <a name="kalamata"></a>kalamata
+                        </div>
+                        <!-- .panel-heading -->
+                        <div class="panel-body">
+                            <div class="panel-group" id="kalamata">
+                            IP: 74.116.114.10 <br>
+                            HW:  <br>
+                            <br>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#kalamata" href="#collapsekalamata">Status Details</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapsekalamata" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            
+                                            <div class="alert alert-success">
+                                                Instance: Up
+                                            </div>
+                                            
+                                            <div class="alert alert-success">
+                                                apache: Up
+                                            </div>
+                                            
+                                            <div class="alert alert-warning">
+                                                jboss: Unknown
+                                            </div>
+                                            
+                                            <div class="alert alert-success">
+                                                concerto: Up
+                                            </div>
+                                                                                    </div>
+                                    <small><p style="text-indent: 1em;">last updated: 2015-04-15 15:31:25</p></small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- .panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-warning">
+                        <div class="panel-heading">
+                            <a name="liberty"></a>liberty
+                        </div>
+                        <!-- .panel-heading -->
+                        <div class="panel-body">
+                            <div class="panel-group" id="liberty">
+                            IP: 74.116.114.4 <br>
+                            HW:  <br>
+                            <br>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#liberty" href="#collapseliberty">Status Details</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseliberty" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            
+                                            <div class="alert alert-success">
+                                                Instance: Up
+                                            </div>
+                                            
+                                            <div class="alert alert-success">
+                                                apache: Up
+                                            </div>
+                                            
+                                            <div class="alert alert-warning">
+                                                jboss: Unknown
+                                            </div>
+                                            
+                                            <div class="alert alert-success">
+                                                concerto: Up
+                                            </div>
+                                                                                    </div>
+                                    <small><p style="text-indent: 1em;">last updated: 2015-04-15 15:31:28</p></small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- .panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-warning">
+                        <div class="panel-heading">
+                            <a name="rhythm"></a>rhythm
+                        </div>
+                        <!-- .panel-heading -->
+                        <div class="panel-body">
+                            <div class="panel-group" id="rhythm">
+                            IP: 74.116.114.68 <br>
+                            HW:  <br>
+                            <br>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#rhythm" href="#collapserhythm">Status Details</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapserhythm" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            
+                                            <div class="alert alert-success">
+                                                Instance: Up
+                                            </div>
+                                            
+                                            <div class="alert alert-success">
+                                                apache: Up
+                                            </div>
+                                            
+                                            <div class="alert alert-warning">
+                                                jboss: Unknown
+                                            </div>
+                                            
+                                            <div class="alert alert-success">
+                                                concerto: Up
+                                            </div>
+                                                                                    </div>
+                                    <small><p style="text-indent: 1em;">last updated: 2015-04-15 15:31:31</p></small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- .panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-warning">
+                        <div class="panel-heading">
+                            <a name="tapenade"></a>tapenade
+                        </div>
+                        <!-- .panel-heading -->
+                        <div class="panel-body">
+                            <div class="panel-group" id="tapenade">
+                            IP: 74.116.114.11 <br>
+                            HW:  <br>
+                            <br>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#tapenade" href="#collapsetapenade">Status Details</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapsetapenade" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            
+                                            <div class="alert alert-success">
+                                                Instance: Up
+                                            </div>
+                                            
+                                            <div class="alert alert-success">
+                                                apache: Up
+                                            </div>
+                                            
+                                            <div class="alert alert-warning">
+                                                jboss: Unknown
+                                            </div>
+                                            
+                                            <div class="alert alert-success">
+                                                concerto: Up
+                                            </div>
+                                                                                    </div>
+                                    <small><p style="text-indent: 1em;">last updated: 2015-04-15 15:31:30</p></small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- .panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-warning">
+                        <div class="panel-heading">
+                            <a name="truth"></a>truth
+                        </div>
+                        <!-- .panel-heading -->
+                        <div class="panel-body">
+                            <div class="panel-group" id="truth">
+                            IP: 74.116.114.6 <br>
+                            HW:  <br>
+                            <br>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#truth" href="#collapsetruth">Status Details</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapsetruth" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            
+                                            <div class="alert alert-danger">
+                                                Instance: Down
+                                            </div>
+                                            
+                                            <div class="alert alert-success">
+                                                apache: Up
+                                            </div>
+                                            
+                                            <div class="alert alert-warning">
+                                                jboss: Unknown
+                                            </div>
+                                            
+                                            <div class="alert alert-success">
+                                                concerto: Up
+                                            </div>
+                                                                                    </div>
+                                    <small><p style="text-indent: 1em;">last updated: 2015-04-15 15:31:21</p></small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- .panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-warning">
+                        <div class="panel-heading">
+                            <a name="wisdom"></a>wisdom
+                        </div>
+                        <!-- .panel-heading -->
+                        <div class="panel-body">
+                            <div class="panel-group" id="wisdom">
+                            IP: 74.116.114.9 <br>
+                            HW:  <br>
+                            <br>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#wisdom" href="#collapsewisdom">Status Details</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapsewisdom" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            
+                                            <div class="alert alert-success">
+                                                Instance: Up
+                                            </div>
+                                            
+                                            <div class="alert alert-success">
+                                                apache: Up
+                                            </div>
+                                            
+                                            <div class="alert alert-warning">
+                                                jboss: Unknown
+                                            </div>
+                                            
+                                            <div class="alert alert-success">
+                                                concerto: Up
+                                            </div>
+                                                                                    </div>
+                                    <small><p style="text-indent: 1em;">last updated: 2015-04-15 15:31:28</p></small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- .panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+                        <div class="col-lg-12">
+                <h1 class="page-header"><a name="Services"></a>Services</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-green">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-check fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">Google</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="http://www.google.com/appsstatus#hl=en&v=status">
+                            <div class="panel-footer">
+                                <span class="pull-left">View Details</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-green">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-check fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">Slack</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="https://status.slack.com/">
+                            <div class="panel-footer">
+                                <span class="pull-left">View Details</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-yellow">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-warning fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">AWS</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="http://status.aws.amazon.com/">
+                            <div class="panel-footer">
+                                <span class="pull-left">View Details</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-red">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-ge fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">Git</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left">View Details</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+    <!-- jQuery -->
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script src="../bower_components/raphael/raphael-min.js"></script>
+    <script src="../bower_components/morrisjs/morris.min.js"></script>
+    <script src="../js/morris-data.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
+
+</body>
+
+</html>
