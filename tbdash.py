@@ -61,7 +61,7 @@ print(chars)
 #pp.pprint(roster)
 chars.sort()
 loader = quik.FileLoader(getcwd() + '/', True)
-filelist = ['template_serverlist.html']
+filelist = ['template_guild.html']
 for tempfile in filelist:
     outname = tempfile.replace("template", "processed")
     template = loader.load_template("templates/" + tempfile)
