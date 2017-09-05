@@ -61,6 +61,14 @@
                                 #end
                             </tr>
                             #end
+                            #for @player in @ss:
+                            <tr class=success>
+                                <td>@player.displayname
+                                #for @c in @player.characters:
+                                <td>@c.stars</td>
+                                #end
+                            </tr>
+                            #end
                           </tbody>
                     </table>
             last updated: @updated

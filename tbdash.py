@@ -52,9 +52,34 @@ def doPlayer(playername):
     return playercharacters
 
 
+def doStarSummary(roster):
+    starsummary = [{'playername':'0star','displayname':'0star','characters':[]},
+                   {'playername':'1star','displayname':'1star','characters':[]},
+                   {'playername':'2star','displayname':'2star','characters':[]},
+                   {'playername':'3star','displayname':'3star','characters':[]},
+                   {'playername':'4star','displayname':'4star','characters':[]},
+                   {'playername':'5star','displayname':'5star','characters':[]},
+                   {'playername':'6star','displayname':'6star','characters':[]},
+                   {'playername':'7star','displayname':'7star','characters':[]}]
+    for row in starsummary:
+        for char in chars:
+            row['characters'].append({'character': char, 'stars': 0})
+    for player in roster:
+        print(player)
+        for character in player['characters']:
+            print(character)
+            for c in starsummary[int(character['stars'])]['characters']:
+                if c['character'] == character['character']:
+                    c['stars'] += 1
+    return starsummary
+
+
 roster = getGuildRoster()
 for m in roster:
     m['characters'] = doPlayer(m['playername'])
+print(roster)
+ss = doStarSummary(roster)
+print(ss)
 updated = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 pp = pprint.PrettyPrinter(indent=4)
 print(chars)
